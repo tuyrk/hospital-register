@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.200.116.217:3306/register?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowMultiQueries=true
+    username: test
+    password: 123456
+  jackson:
+    default-property-inclusion: non_empty
+  redis:
+      host: 10.200.116.217
+      port: 6379
+      password: 123456
+server:
+  port: 9002
+logging:
+  level:
+    com.cdutcm.register.dataobject.mapper: debug
+    com.baomidou.mybatisplus.extension.service: debug
+    io.swagger.models.parameters.AbstractSerializableParameter: error
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 配置slq打印日志
+register:
+  wechat:
+    mpAppId: wx963b87adbec083b1
+    mpAppSecret: 8d91831f6b99a03d926a9246347fbcaf
+  workhours:
+    am:
+      start: '09:00'
+      end: '12:00'
+    pm:
+      start: '13:30'
+      end: '17:00'
+  url:
+    wechatMpAuthorize: http://wangmao.natapp1.cc
+    returnUrl: http://10.200.116.218:5000/#/
+    adminLogin: http://10.200.116.218:5000/#/management
